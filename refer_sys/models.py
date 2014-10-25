@@ -6,4 +6,6 @@ class Link(models.Model):
   clicks = models.IntegerField(default=0)
   created_at = models.DateTimeField(default=timezone.now)
 
-
+  def add_click(self):
+    self.clicks += 1
+    self.save

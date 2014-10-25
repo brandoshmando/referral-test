@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def root_page(request):
+  render (request, 'refer_sys/root_page.html', {})
