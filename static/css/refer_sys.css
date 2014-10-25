@@ -1,0 +1,19 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#content-wrap {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center
+}
+
+table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+td {
+  width: 20%;
+}
