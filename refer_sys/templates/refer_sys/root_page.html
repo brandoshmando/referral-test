@@ -7,8 +7,25 @@
 <body>
   <div id="content-wrap">
     <h1>Referral Maker</h1>
-    <div id="form-wrap">
-      <p>This is where the form will go!</p>
+    <div id="list-wrap">
+      <table>
+        <tr>
+          <th>Link Title</th>
+          <th>Clicks</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for link in links %}
+        <tr>
+          <td>
+            {{ link.title }}
+          </td>
+          <td>
+            {{ link.clicks }}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
   </div>
 </body>
