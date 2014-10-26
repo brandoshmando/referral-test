@@ -11,10 +11,12 @@
     <h1>Referral Maker</h1>
   </div>
   <div id="content-wrap">
-    <form action="POST">
-      {{ from.as_p }}
-      <button>Create</button>
+    {% block content %}
+    <form method="POST">{% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Create</button>
     </form>
+    {% endblock %}
     <table>
       <tr>
         <th>Title</th>
