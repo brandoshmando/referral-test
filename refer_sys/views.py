@@ -12,4 +12,8 @@ def root_page(request):
   return render (request, 'refer_sys/root_page.html',
     {'links':links, 'form':form}
     )
+# def destroy_link
+
+# def landing_page(request)
+
 

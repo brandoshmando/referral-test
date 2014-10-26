@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/refer_sys.css' %}">
+  <title>TBL Referral Pro</title>
+</head>
+<body>
+  <div id="nav">
+    <h1>Referral Maker</h1>
+  </div>
+  <div id="content-wrap">
+    {% block content %}
+    {% endblock %}
+    </table>
+  </div>
+</body>
+</html>
