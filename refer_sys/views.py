@@ -34,11 +34,11 @@ def delete_link(request, pk):
       link.delete()
       return redirect('/')
   return render (request, 'refer_sys/root_page.html',
-    {'links':links, 'form':form}
+    { 'links':links, 'form':form }
     )
 
 def landing_page(request):
-  link_title = request.GET.get('link')
+  link_title = request.GET.get('link').title()
   link = get_object_or_404(Link, title=link_title)
   link.add_click()
   return render (request, "refer_sys/landing_page.html", {'title':link.title})

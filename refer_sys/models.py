@@ -9,3 +9,4 @@ class Link(models.Model):
   def add_click(self):
     self.clicks += 1
     self.save()
+
