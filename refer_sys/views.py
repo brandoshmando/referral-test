@@ -3,7 +3,13 @@ from refer_sys.models import Link
 from .forms import LinkForm, DeleteLinkForm
 
 def root_page(request):
-  links = Link.objects.order_by("-clicks")
+  order = request.GET.get('o')
+  if order == 'd':
+    links = Link.objects.order_by("clicks")
+  else:
+    links = Link.objects.order_by("-clicks")
+  o = 'd' if order == 'a' else 'a'
+
   form = LinkForm()
   if request.method == "POST":
     form = LinkForm(request.POST)
@@ -11,7 +17,7 @@ def root_page(request):
       form.save()
       return redirect('/')
   return render (request, 'refer_sys/root_page.html',
-    {'links':links, 'form':form}
+    {'links':links, 'form':form, 'o':o}
     )
 
 def edit_link(request, pk):
