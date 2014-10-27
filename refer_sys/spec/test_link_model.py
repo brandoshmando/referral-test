@@ -12,11 +12,11 @@ def test_add_click():
 
 def test_format_query():
   link = LinkFactory.create()
-  assert link.format_query == "example"
+  assert link.format_query() == "example"
 
 def test_format_query_with_spaces():
   link = LinkFactory.build(title="Example Title")
-  assert link.format_query == "example+title"
+  assert link.format_query() == "example+title"
 
 
 
