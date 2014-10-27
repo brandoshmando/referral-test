@@ -1,0 +1,9 @@
+Django==1.7.1
+dj-database-url==0.3.0
+factory-boy==2.4.1
+gunicorn==19.1.1
+py==1.4.26
+pytest==2.6.4
+pytest-django==2.7.0
+whitenoise==1.0.3
+psycopg2==2.5.3
