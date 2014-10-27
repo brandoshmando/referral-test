@@ -43,5 +43,9 @@ def landing_page(request):
   link.add_click()
   return render (request, "refer_sys/landing_page.html", {'title':link.title})
 
+def active_links(request):
+  links = Link.objects.all()
+  return render (request, "refer_sys/active_links.html", {'links':links})
+
 
 

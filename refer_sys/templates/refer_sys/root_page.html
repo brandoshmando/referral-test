@@ -1,37 +1,49 @@
 {% extends 'refer_sys/base.html' %}
 
 {% block content %}
-  <form method="POST">{% csrf_token %}
-    {{ form.as_p }}
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <form class=".form-inline" method="POST">{% csrf_token %}
+      {{ form.as_p }}
+    </form>
     <button type="submit">Create</button>
-  </form>
-
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Clicks</th>
-      <th>Edit</th>
-      <th>Delete</th>
-    </tr>
-    {% for link in links %}
-      <tr>
-        <td>
-          {{ link.title }}
-        </td>
-        <td>
-          {{ link.clicks }}
-        </td>
-        <td>
-          <a href="{% url 'edit_link' pk=link.pk %}">Edit</a>
-        </td>
-        <td>
-          <form method="POST" action="{% url 'delete_link' pk=link.pk %}">{% csrf_token %}
-            <button type="submit">
-              Delete
-            </button>
-          </form>
-       </td>
-      </tr>
-    {% endfor %}
-  </table>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+<div class="row">
+  <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <table class="table table-hover">
+        <tr>
+          <th>Title</th>
+          <th>Clicks</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for link in links %}
+        <tr>
+          <td>
+            {{ link.title }}
+          </td>
+          <td>
+            {{ link.clicks }}
+          </td>
+          <td>
+            <a href="{% url 'edit_link' pk=link.pk %}" class="btn btn-primary">Edit</a>
+          </td>
+          <td>
+            <form method="POST" action="{% url 'delete_link' pk=link.pk %}">{% csrf_token %}
+              <button type="submit" class="btn btn-danger">
+                Delete
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
 {% endblock %}
