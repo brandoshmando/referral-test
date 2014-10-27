@@ -20,3 +20,4 @@ def test_format_query_with_spaces():
 
 
 
+
