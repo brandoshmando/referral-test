@@ -10,3 +10,7 @@ class Link(models.Model):
     self.clicks += 1
     self.save()
 
+  def format_query(self):
+    query = self.title.lower().split(' ')
+    return "+".join(query)
+

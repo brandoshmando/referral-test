@@ -10,7 +10,7 @@
         {% for link in links %}
         <tr>
           <td>
-            <a href="{% url 'landing_page' %}?link={{ link.title.lower }}">{% url 'landing_page' %}?link={{ link.title.lower }}</a>
+            <a href="{% url 'landing_page' %}?link={{ link.format_query }}">{% url 'landing_page' %}?link={{ link.format_query }}</a>
           </td>
         </tr>
         {% endfor %}
