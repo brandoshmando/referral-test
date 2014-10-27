@@ -3,7 +3,7 @@ from refer_sys.models import Link
 from .forms import LinkForm, DeleteLinkForm
 
 def root_page(request):
-  links = Link.objects.order_by("created_at")
+  links = Link.objects.order_by("-clicks")
   form = LinkForm()
   if request.method == "POST":
     form = LinkForm(request.POST)
