@@ -3,17 +3,11 @@ html, body {
   padding: 0;
 }
 
-#content-wrap {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center
-}
-
-table {
-  width: 100%;
-  margin: 0 auto;
-}
-
-td {
+#bubble-one {
+  background: tomato;
   width: 20%;
+  border-radius: 100%;
+  text-align: center;
+  padding: 15px;
+  margin-left: 15em;
 }
